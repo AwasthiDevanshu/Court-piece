@@ -40,19 +40,18 @@ export default class Player {
     minCard() {
         let selectedSuit = _.min(this.cards, function (cardSet) {
             if (_.isEmpty(cardSet)) {
-                return 100;
+                return 50;
             }
             let firstCard = _.first(cardSet);
             return firstCard.rank;
         });
-
         return this.cards[selectedSuit[0].suit].shift();
     }
     arrangeCards(cards) {
         let groupedCards = _.groupBy(cards, function (card) {
             return card["suit"];
         });
-        return _.map(groupedCards, function (cardSet) {
+        return _.mapObject(groupedCards, function (cardSet) {
             return _.sortBy(cardSet, 'rank');
         })
     }
