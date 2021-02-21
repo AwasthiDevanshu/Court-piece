@@ -15,7 +15,6 @@ for (let i = 0; i < playerCards.length; i++) {
     players[i].trumpSuit = trumpSuit;
 }
 function startGame() {
-    let handWin = [];
     let round = 0;
     while (round < 13) {
         round++;

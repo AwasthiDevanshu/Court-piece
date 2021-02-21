@@ -5,21 +5,6 @@ export default {
     shuffledDeck() {
         let cards = this.createDeck();
         return _.shuffle(cards);
-
-
-        /* //shuffle cards
-        let cardId = cards.length;
-        while (0 !== cardId) {
-            // Pick a remaining element
-            let randId = _.random(0, cardId);
-            cardId -= 1;
-            // Swap it with the current element.
-            let tmp = cards[cardId];
-            cards[cardId] = cards[randId];
-            cards[randId] = tmp;
-        }
-        return cards;
-        */
     },
     createDeck() {
         let cards = [];
@@ -32,18 +17,6 @@ export default {
     },
     distributeCards(cards) {
         return _.chunk(cards, 13);
-
-
-        /* //split cards between players
-        let player = [];     
-        for (let i = 0; i < 4; i++) {
-            let temp = [];
-            for (let j = 0; j < 13; j++) {
-                temp[j] = cards[j + 13 * i];
-            }
-            player[i] = temp;
-        }
-        return player; */
     },
     setTrump(cards) {
         let trumpSuit = _.random(0, 4);
